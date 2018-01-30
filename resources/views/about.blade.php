@@ -6,6 +6,8 @@
 
 @section('content')
         @foreach($allacc as $acc)
-        <div> {{ $acc->name }} </div>
+        	<div>
+                <a href="{{ action('Controller@show', [$acc->id]) }}">{{ $acc->name }}</a>
+			</div>
         @endforeach
 @stop

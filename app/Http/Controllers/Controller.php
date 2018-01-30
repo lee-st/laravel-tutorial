@@ -23,4 +23,9 @@ class Controller extends BaseController
         $allacc = Acc::all();
         return view('about', compact('allacc'));
     }
+
+    public function show($id){
+        $selected = Acc::findOrFail($id);
+        return view('about-details', compact('selected'));
+    }
 }
