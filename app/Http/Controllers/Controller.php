@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+Use Request;
 
 class Controller extends BaseController
 {
@@ -27,5 +28,14 @@ class Controller extends BaseController
     public function show($id){
         $selected = Acc::findOrFail($id);
         return view('about-details', compact('selected'));
+    }
+
+    public function add(){
+        return view('addNew');
+    }
+
+    public function store(){
+        $input = Request::all();
+        return $input;
     }
 }
