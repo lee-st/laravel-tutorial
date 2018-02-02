@@ -17,4 +17,7 @@
 	<li>{{ $selected->phone }}</li>
 	</ul>
 	</div>
+	<br>
+	<br>
+	<button class="btn btn-primary" type="button" onclick="location.href='{{ action('Controller@edit', $selected->id) }}'">Edit</button>
 @stop

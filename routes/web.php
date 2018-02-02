@@ -18,7 +18,9 @@
 
 
 Route::get('/', 'Controller@index');
-Route::get('about', 'Controller@about');
-Route::get('about/{id}', 'Controller@show');
-Route::get('addNew', 'Controller@add');
-Route::post('about', 'Controller@store');
+// Route::get('about', 'Controller@about');
+// Route::get('about/{id}', 'Controller@show');
+// Route::get('addNew', 'Controller@add');
+// Route::post('about', 'Controller@store');
+
+Route::resource('about', 'Controller');

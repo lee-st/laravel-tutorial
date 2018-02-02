@@ -9,8 +9,10 @@
 @stop
 
 @section('content')
-	{!! Form::open([ 'url' => 'about']) !!}
-		@include('partials.form', ['buttonText'=>'Add New'])
+	{!! Form::model($selected, ['method' => 'PATCH', 'action' => ['Controller@update', $selected->id]]) !!}
+	
+	@include('partials.form', ['buttonText'=>'Update'])
+	
 	{!! Form::close() !!}
 
 	@include('errors.form-error')
