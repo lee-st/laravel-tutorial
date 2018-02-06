@@ -24,3 +24,6 @@ Route::get('/', 'Controller@index');
 // Route::post('about', 'Controller@store');
 
 Route::resource('about', 'Controller');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAccTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,17 @@ class CreateAccTable extends Migration
      */
     public function up()
     {
-        Schema::create('accs', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
             $table->string('name');
-            $table->string('gender');
-            $table->string('phone');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
-        
+        Schema::create('about_tag', function (Blueprint $table) {
+            $table->increments('about_id')->unsigned();
+            $table->string('tag_id')->unsigned();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -34,6 +33,6 @@ class CreateAccTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table');
+        Schema::dropIfExists('tags');
     }
 }
